@@ -28,14 +28,14 @@ public class Player : MonoBehaviour {
 	public GameObject m_projectTilePrefab;
 	public GameObject m_dotPrefab;
 
-	private Rigidbody2D m_projectilePivotRigid;
+	private Rigidbody2D m_projectileRigid;
 	private List<GameObject> m_dots = new List<GameObject> ();
 
 	// Use this for initialization
 	void Start () {
 		m_transform = GetComponent<Transform> ();
 		m_projectilePivot = m_transform.Find ("ProjectilePivot");
-		m_projectilePivotRigid = m_projectilePivot.GetComponent<Rigidbody2D> ();
+		m_projectileRigid = m_projectTilePrefab.GetComponent<Rigidbody2D> ();
 		SetMovingState (MOVING_STATE.STILL);
 		SetShootingState (SHOOTING_STATE.READY);
 
@@ -127,17 +127,20 @@ public class Player : MonoBehaviour {
 	}
 
 	private void SetTrajectory() {
-		Vector2 force = GetShootingForce();
+		Vector2 force = GetShootingForce () / m_projectileRigid.mass;
 		Vector3 startPos = m_projectilePivot.GetComponent<Transform> ().position;
 		float velocity = Mathf.Sqrt (force.x * force.x + force.y * force.y);
 		float angle = Mathf.Rad2Deg * Mathf.Atan2(force.y, force.y);
+		float drag = m_projectileRigid.drag;
 
-		float dt = Time.deltaTime;
+		float dt = 0.1f;
 		for (int i = 0; i < m_dots.Count; i++) {
 			float dx = velocity * dt * Mathf.Cos(angle * Mathf.Deg2Rad);
 			float dy = velocity * dt * Mathf.Sin(angle * Mathf.Deg2Rad) - (Physics2D.gravity.magnitude * dt * dt / 2.0f);
 			Vector3 pos = new Vector3(startPos.x + dx , startPos.y + dy ,2);
 			m_dots [i].GetComponent<Transform> ().position = pos;
+			velocity *= 1 / (1 + drag * dt);
+			dt += 0.1f;
 		}
 	}
 }
