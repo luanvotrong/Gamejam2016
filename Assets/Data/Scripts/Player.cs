@@ -120,7 +120,6 @@ public class Player : MonoBehaviour {
 	}
 
 	private void ResetTrajectory() {
-		float offset = (float)(0.2 / 20);
 		for (int i = 0; i < m_dots.Count; i++) {
 			//m_dots[i].GetComponent<Transform> ().localScale -= new Vector3 (offset * i, offset * i, offset * i);
 		}
