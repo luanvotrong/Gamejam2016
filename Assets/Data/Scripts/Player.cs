@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 	private float MOVING_SPEED = 5;
-	private float SHOOTING_FORCE_BASE = 20;
+	private float SHOOTING_FORCE_BASE = 2000;
 	public enum MOVING_STATE {
 		STILL = 0,
 		LEFT,
@@ -74,7 +74,8 @@ public class Player : MonoBehaviour {
 		case SHOOTING_STATE.FIRE:
 			Debug.Log ("FIRE: " + m_projectileDir.x + " " + m_projectileDir.y);
 
-			GameObject projectile = (GameObject)Instantiate (m_projectTilePrefab, m_projectilePivot);
+			GameObject projectile = (GameObject)Instantiate (m_projectTilePrefab);
+			projectile.GetComponent<Transform> ().position = m_projectilePivot.position;
 			projectile.GetComponent<Rigidbody2D> ().AddForce (m_projectileDir * SHOOTING_FORCE_BASE);
 			SetShootingState (SHOOTING_STATE.READY);
 			break;
