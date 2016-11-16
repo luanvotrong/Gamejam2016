@@ -33,8 +33,7 @@ public class PlayerController : MonoBehaviour {
 			if (touch.y > pos.y) {
 				m_player.OnAiming (m_projectilePivot.position - touch);
 			}
-		}
-		else if (Input.GetMouseButtonUp (0)) {
+		} else if (Input.GetMouseButtonUp (0)) {
 			if (m_player.GetMovingState () != Player.MOVING_STATE.STILL) {
 				m_player.SetMovingState (Player.MOVING_STATE.STILL);
 			}

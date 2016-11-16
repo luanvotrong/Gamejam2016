@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 	private float MOVING_SPEED = 5;
+	private float SHOOTING_FORCE_BASE = 20;
 	public enum MOVING_STATE {
 		STILL = 0,
 		LEFT,
@@ -20,10 +21,14 @@ public class Player : MonoBehaviour {
 	private Vector2 m_projectileDir;
 
 	private Transform m_transform;
+	private Transform m_projectilePivot;
+
+	public GameObject m_projectTilePrefab;
 
 	// Use this for initialization
 	void Start () {
 		m_transform = GetComponent<Transform> ();
+		m_projectilePivot = m_transform.Find ("ProjectilePivot");
 		SetMovingState (MOVING_STATE.STILL);
 		SetShootingState (SHOOTING_STATE.READY);
 	}
@@ -67,7 +72,10 @@ public class Player : MonoBehaviour {
 			Debug.Log("AIM: " + m_projectileDir.x + " " + m_projectileDir.y);
 			break;
 		case SHOOTING_STATE.FIRE:
-			Debug.Log("FIRE: " + m_projectileDir.x + " " + m_projectileDir.y);
+			Debug.Log ("FIRE: " + m_projectileDir.x + " " + m_projectileDir.y);
+
+			GameObject projectile = (GameObject)Instantiate (m_projectTilePrefab, m_projectilePivot);
+			projectile.GetComponent<Rigidbody2D> ().AddForce (m_projectileDir * SHOOTING_FORCE_BASE);
 			SetShootingState (SHOOTING_STATE.READY);
 			break;
 		}
