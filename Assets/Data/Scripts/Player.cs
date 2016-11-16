@@ -10,11 +10,22 @@ public class Player : MonoBehaviour {
 	}
 	private MOVING_STATE m_movingState;
 
+	public enum SHOOTING_STATE
+	{
+		READY = 0,
+		AIM,
+		FIRE
+	}
+	private SHOOTING_STATE m_shootingState;
+	private Vector2 m_projectileDir;
+
 	private Transform m_transform;
 
 	// Use this for initialization
 	void Start () {
 		m_transform = GetComponent<Transform> ();
+		SetMovingState (MOVING_STATE.STILL);
+		SetShootingState (SHOOTING_STATE.READY);
 	}
 	
 	// Update is called once per frame
@@ -45,5 +56,34 @@ public class Player : MonoBehaviour {
 
 	public MOVING_STATE GetMovingState() {
 		return m_movingState;
+	}
+
+	public void SetShootingState(SHOOTING_STATE state) {
+		m_shootingState = state;
+		switch (m_shootingState) {
+		case SHOOTING_STATE.READY:
+			break;
+		case SHOOTING_STATE.AIM:
+			Debug.Log("AIM: " + m_projectileDir.x + " " + m_projectileDir.y);
+			break;
+		case SHOOTING_STATE.FIRE:
+			Debug.Log("FIRE: " + m_projectileDir.x + " " + m_projectileDir.y);
+			SetShootingState (SHOOTING_STATE.READY);
+			break;
+		}
+	}
+
+	public SHOOTING_STATE GetShootingState() {
+		return m_shootingState;
+	}
+
+	public void OnAiming(Vector3 dir) {
+		m_projectileDir = dir;
+		SetShootingState (SHOOTING_STATE.AIM);
+	}
+
+	public void OnFiring(Vector3 dir) {
+		m_projectileDir = dir;
+		SetShootingState (SHOOTING_STATE.FIRE);
 	}
 }
