@@ -1,0 +1,27 @@
+
+spine_Enemy.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+asset_05
+  rotate: true
+  xy: 305, 74
+  size: 74, 56
+  orig: 79, 63
+  offset: 5, 0
+  index: -1
+asset_07
+  rotate: false
+  xy: 305, 150
+  size: 67, 70
+  orig: 75, 70
+  offset: 0, 0
+  index: -1
+asset_16
+  rotate: true
+  xy: 2, 2
+  size: 218, 301
+  orig: 227, 310
+  offset: 4, 5
+  index: -1

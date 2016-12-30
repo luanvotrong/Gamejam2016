@@ -1,0 +1,62 @@
+
+spine_maincharacter.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer-50
+  rotate: false
+  xy: 465, 351
+  size: 227, 158
+  orig: 227, 158
+  offset: 0, 0
+  index: -1
+asset_05
+  rotate: false
+  xy: 929, 453
+  size: 74, 56
+  orig: 79, 63
+  offset: 5, 0
+  index: -1
+asset_07
+  rotate: false
+  xy: 465, 279
+  size: 67, 70
+  orig: 75, 70
+  offset: 0, 0
+  index: -1
+asset_16
+  rotate: false
+  xy: 2, 208
+  size: 218, 301
+  orig: 227, 310
+  offset: 4, 5
+  index: -1
+asset_78
+  rotate: false
+  xy: 222, 257
+  size: 241, 252
+  orig: 244, 253
+  offset: 3, 1
+  index: -1
+asset_81
+  rotate: false
+  xy: 694, 367
+  size: 125, 142
+  orig: 125, 142
+  offset: 0, 0
+  index: -1
+asset_90
+  rotate: false
+  xy: 2, 2
+  size: 177, 204
+  orig: 177, 204
+  offset: 0, 0
+  index: -1
+asset_93
+  rotate: false
+  xy: 821, 379
+  size: 106, 130
+  orig: 106, 130
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,125 @@
+
+spine_Enemy.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer-51
+  rotate: false
+  xy: 2, 809
+  size: 493, 213
+  orig: 493, 213
+  offset: 0, 0
+  index: -1
+asset_05
+  rotate: true
+  xy: 464, 226
+  size: 74, 56
+  orig: 79, 63
+  offset: 5, 0
+  index: -1
+asset_07
+  rotate: true
+  xy: 309, 2
+  size: 67, 70
+  orig: 75, 70
+  offset: 0, 0
+  index: -1
+asset_16
+  rotate: false
+  xy: 2, 232
+  size: 218, 301
+  orig: 227, 310
+  offset: 4, 5
+  index: -1
+asset_19
+  rotate: false
+  xy: 222, 299
+  size: 120, 234
+  orig: 124, 240
+  offset: 4, 0
+  index: -1
+asset_22
+  rotate: false
+  xy: 222, 159
+  size: 125, 138
+  orig: 133, 138
+  offset: 2, 0
+  index: -1
+asset_25
+  rotate: true
+  xy: 394, 94
+  size: 72, 60
+  orig: 84, 67
+  offset: 12, 0
+  index: -1
+asset_33
+  rotate: false
+  xy: 256, 538
+  size: 223, 269
+  orig: 223, 269
+  offset: 0, 0
+  index: -1
+asset_37
+  rotate: true
+  xy: 309, 71
+  size: 86, 83
+  orig: 106, 83
+  offset: 7, 0
+  index: -1
+asset_40
+  rotate: false
+  xy: 733, 739
+  size: 230, 107
+  orig: 231, 107
+  offset: 1, 0
+  index: -1
+asset_44
+  rotate: false
+  xy: 349, 168
+  size: 113, 132
+  orig: 128, 132
+  offset: 8, 0
+  index: -1
+asset_47
+  rotate: false
+  xy: 208, 61
+  size: 99, 96
+  orig: 104, 111
+  offset: 0, 7
+  index: -1
+asset_58
+  rotate: false
+  xy: 2, 535
+  size: 252, 272
+  orig: 252, 280
+  offset: 0, 3
+  index: -1
+asset_61
+  rotate: false
+  xy: 344, 302
+  size: 157, 234
+  orig: 157, 236
+  offset: 0, 2
+  index: -1
+asset_63
+  rotate: true
+  xy: 733, 848
+  size: 174, 246
+  orig: 174, 246
+  offset: 0, 0
+  index: -1
+asset_64
+  rotate: false
+  xy: 497, 824
+  size: 234, 198
+  orig: 234, 198
+  offset: 0, 0
+  index: -1
+asset_67
+  rotate: false
+  xy: 2, 33
+  size: 204, 197
+  orig: 207, 197
+  offset: 0, 0
+  index: -1
